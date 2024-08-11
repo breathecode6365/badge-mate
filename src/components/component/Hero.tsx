@@ -32,16 +32,22 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@radix-ui/themes";
-import React from "react";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import Aos from "aos";
 
 export function Hero() {
-  const[triggerCommingSoon, setTriggerCommingSoon] = React.useState(false);
-  
+  const [triggerCommingSoon, setTriggerCommingSoon] = React.useState(false);
+
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-[#F5F5F7] text-[#1D1D1F]">
-      <header className="flex h-16 w-full shrink-0 items-center px-4 md:px-6 bg-[#F5F5F7] border-b border-[#D2D2D7]">
-        <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-          <img src="/logo.png" alt="Logo" className="w-[150px]" />
+    <div className="flex relative min-h-[100dvh] flex-col bg-[#F5F5F7] text-[#1D1D1F]">
+      <header className="flex fixed  z-50 h-16 w-full shrink-0 items-center px-4 md:px-6 bg-[#F5F5F7] border-b border-[#D2D2D7]">
+        <Link href="#" className="mr-6 flex" prefetch={false}>
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="md:w-[150px] w-[250px] h-auto"
+          />
         </Link>
         <div className="flex w-full justify-center">
           <NavigationMenu className="hidden lg:flex">
@@ -85,16 +91,20 @@ export function Hero() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32">
+      <motion.main className="flex-1">
+        <section className="w-full py-10 min-h-[500px] sm:mt-[50px]">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <h1
+                    data-aos="fade-up"
+                    className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Revolutionize Your Credentialing with BadgeMate
                   </h1>
-                  <p className="max-w-[600px] text-[#86868B] md:text-xl">
+                  <p
+                    data-aos="fade-right"
+                    className="max-w-[600px] text-[#86868B] md:text-xl">
                     Streamline your digital badge management and empower your
                     organization, learners, and partners.
                   </p>
@@ -102,18 +112,24 @@ export function Hero() {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
                     href="#"
+                    data-aos="fade-right"
+                    data-aos-duration="1800"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-[#0071E3] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0077E6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0077E6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F5F7] disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}>
                     Get Started
                   </Link>
                   <Link
                     href="#"
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
                     className="inline-flex h-10 items-center justify-center rounded-md border border-[#D2D2D7] bg-[#F5F5F7] px-8 text-sm font-medium shadow-sm transition-colors hover:bg-[#D2D2D7] hover:text-[#1D1D1F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D2D2D7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F5F7] disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}>
                     Request a Demo
                   </Link>
                   <Link
                     href="#"
+                    data-aos="fade-left"
+                    data-aos-duration="2200"
                     className="inline-flex h-10 items-center justify-center rounded-md border border-[#D2D2D7] bg-[#F5F5F7] px-8 text-sm font-medium shadow-sm transition-colors hover:bg-[#D2D2D7] hover:text-[#1D1D1F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D2D2D7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F5F7] disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}>
                     Learn More
@@ -121,27 +137,38 @@ export function Hero() {
                 </div>
               </div>
               <img
-                src="/displayimage1.jpeg"
-                width="550"
-                height="550"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                src="/displayimage1.webp"
+                width="500"
+                height="500"
                 alt="Hero"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:aspect-square"
+                className="mx-auto overflow-hidden rounded-lg object-cover object-center"
               />
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[#F5F5F7]">
+        <section className="w-full py-5 bg-[#F5F5F7]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <Badge size="3" color="indigo" variant="soft">
+                <Badge
+                  data-aos="fade-up"
+                  size="3"
+                  color="indigo"
+                  variant="soft">
                   Features
                 </Badge>
 
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Streamline Your Credentialing Process
                 </h2>
-                <p className="max-w-[900px] text-[#86868B] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p
+                  data-aos="fade-left"
+                  className="max-w-[900px] text-[#86868B] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   BadgeMate offers a comprehensive suite of features to simplify
                   your digital badge management and empower your organization,
                   learners, and partners.
@@ -151,7 +178,7 @@ export function Hero() {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <ul className="grid gap-6">
-                  <li>
+                  <li data-aos="fade-right" data-aos-duration="1400">
                     <div className="grid gap-1">
                       <div className="flex items-center gap-2">
                         <BadgeIcon className="h-6 w-6 text-[#0071E3]" />
@@ -165,7 +192,7 @@ export function Hero() {
                       </p>
                     </div>
                   </li>
-                  <li>
+                  <li data-aos="fade-right" data-aos-duration="1400">
                     <div className="grid gap-1">
                       <div className="flex items-center gap-2">
                         <ImportIcon className="h-6 w-6 text-[#0071E3]" />
@@ -179,7 +206,7 @@ export function Hero() {
                       </p>
                     </div>
                   </li>
-                  <li>
+                  <li data-aos="fade-right" data-aos-duration="1400">
                     <div className="grid gap-1">
                       <div className="flex items-center gap-2">
                         <LockIcon className="h-6 w-6 text-[#0071E3]" />
@@ -196,6 +223,8 @@ export function Hero() {
                 </ul>
               </div>
               <img
+                data-aos="zoom-out-left"
+                data-aos-duration="1400"
                 src="/displayimage2.jpeg"
                 width="550"
                 height="310"
@@ -205,17 +234,25 @@ export function Hero() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-5">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <Badge size="3" color="indigo" variant="soft">
+                <Badge
+                  data-aos="fade-up"
+                  size="3"
+                  color="indigo"
+                  variant="soft">
                   Benefits
                 </Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2
+                  data-aos="fade-right"
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Empower Your Organization, Learners, and Partners
                 </h2>
-                <p className="max-w-[900px] text-[#86868B] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p
+                  data-aos="fade-left"
+                  className="max-w-[900px] text-[#86868B] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   BadgeMate offers a range of benefits for organizations,
                   individuals, and educational institutions, helping you
                   streamline your credentialing process and unlock new
@@ -226,7 +263,10 @@ export function Hero() {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="grid gap-4">
-                  <div className="flex items-center gap-2">
+                  <div
+                    data-aos="fade-right"
+                    data-aos-duration="1400"
+                    className="flex items-center gap-2">
                     <GroupIcon className="h-6 w-6 text-[#0071E3]" />
                     <h3 className="text-xl font-bold">For Organizations</h3>
                   </div>
@@ -235,7 +275,10 @@ export function Hero() {
                     recognition, and unlock new revenue streams with BadgeMate.
                   </p>
                 </div>
-                <div className="grid gap-4">
+                <div
+                  className="grid gap-4"
+                  data-aos="fade-right"
+                  data-aos-duration="1700">
                   <div className="flex items-center gap-2">
                     <LoaderIcon className="h-6 w-6 text-[#0071E3]" />
                     <h3 className="text-xl font-bold">For Learners</h3>
@@ -245,7 +288,10 @@ export function Hero() {
                     that showcase their achievements and skills.
                   </p>
                 </div>
-                <div className="grid gap-4">
+                <div
+                  className="grid gap-4"
+                  data-aos="fade-right"
+                  data-aos-duration="2000">
                   <div className="flex items-center gap-2">
                     <SchoolIcon className="h-6 w-6 text-[#0071E3]" />
                     <h3 className="text-xl font-bold">For Education</h3>
@@ -257,6 +303,8 @@ export function Hero() {
                 </div>
               </div>
               <img
+                data-aos="zoom-out-left"
+                data-aos-duration="1600"
                 src="/displayimage3.jpeg"
                 width="550"
                 height="310"
@@ -266,8 +314,10 @@ export function Hero() {
             </div>
           </div>
         </section>
-      </main>
-      <footer className="bg-[#F5F5F7] p-6 md:py-12 w-full border-t border-[#D2D2D7]">
+      </motion.main>
+      <footer
+        data-aos="fade-up"
+        className="bg-[#F5F5F7] p-6 md:py-12 w-full border-t border-[#D2D2D7]">
         <div className="container max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
           <div className="grid gap-1">
             <h3 className="font-semibold">Company</h3>
@@ -308,7 +358,8 @@ export function Hero() {
           </div>
         </div>
       </footer>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <footer
+        className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">
           &copy; 2024 BadgeMate. All rights reserved.
         </p>
