@@ -7,21 +7,33 @@ main {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   background: linear-gradient(135deg, #dfecff, #bcb8cb); /* Example gradient */
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
-  
 }
 body {
-  background: linear-gradient(270deg, #d0d2f1, #c6d8e2);
+  background: linear-gradient(270deg, #d0d2f1, #fae6f5);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
 }
 
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+    background: linear-gradient(90deg, #fae6f5, #dfecff, #f0fae6);
+  }
+  33% {
+    background-position: 100% 50%;
+    background: linear-gradient(180deg, #fae6f5, #dfecff, #f0fae6);
+  }
+  66% {
+    background-position: 100% 50%;
+    background: linear-gradient(270deg, #fae6f5, #dfecff, #f0fae6);
+  }
+  100% {
+    background-position: 50% 0%;
+    background: linear-gradient(360deg, #fae6f5, #dfecff, #f0fae6);
+  }
 }
-

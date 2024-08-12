@@ -92,7 +92,7 @@ export function Hero() {
         </div>
       </header>
       <motion.main className="flex-1">
-        <section className="w-full py-10 min-h-[500px] sm:mt-[50px]">
+        <section className="w-full py-10 min-h-[500px] mt-[80px] md:mt-[50px]">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
