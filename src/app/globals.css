@@ -25,15 +25,19 @@ body {
     background: linear-gradient(90deg, #fae6f5, #dfecff, #f0fae6);
   }
   33% {
-    background-position: 100% 50%;
-    background: linear-gradient(180deg, #fae6f5, #dfecff, #f0fae6);
+    background-position: 50% 100%;
+    background: linear-gradient(180deg, #f0fae6, #fae6f5, #dfecff);
   }
   66% {
     background-position: 100% 50%;
-    background: linear-gradient(270deg, #fae6f5, #dfecff, #f0fae6);
+    background: linear-gradient(270deg,  #dfecff, #f0fae6 , #fae6f5,);
   }
   100% {
     background-position: 50% 0%;
     background: linear-gradient(360deg, #fae6f5, #dfecff, #f0fae6);
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -86,14 +86,21 @@ export function Hero() {
           </NavigationMenu>
         </div>
         <div className="ml-auto w-[150px]">
-          <Button className="bg-[#0071E3] text-white hover:bg-[#0077E6] focus:bg-[#0077E6] focus:outline-none focus:ring-2 focus:ring-[#0077E6] focus:ring-offset-2 focus:ring-offset-[#F5F5F7]">
+          <Button
+            onClick={() => {
+              const targetElement = document.getElementById("start");
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-[#0071E3] text-white hover:bg-[#0077E6] focus:bg-[#0077E6] focus:outline-none focus:ring-2 focus:ring-[#0077E6] focus:ring-offset-2 focus:ring-offset-[#F5F5F7]">
             Get Started
           </Button>
         </div>
       </header>
       <motion.main className="flex-1">
-        <section className="w-full py-10 min-h-[500px] mt-[80px] md:mt-[50px]">
-          <div className="container px-4 md:px-6">
+        <section className="flex w-full justify-center mx-auto py-10 min-h-[500px] mt-[80px] md:mt-[50px]">
+          <div className="container px-4 md:px-6 ">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -111,7 +118,7 @@ export function Hero() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
-                    href="#"
+                    href="#start"
                     data-aos="fade-right"
                     data-aos-duration="1800"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-[#0071E3] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0077E6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0077E6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F5F7] disabled:pointer-events-none disabled:opacity-50"
@@ -147,8 +154,9 @@ export function Hero() {
               />
             </div>
           </div>
+          <div id="start"></div>
         </section>
-        <section className="w-full py-5 bg-[#F5F5F7]">
+        <section className="flex w-full justify-center py-5 bg-[#F5F5F7]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -183,7 +191,7 @@ export function Hero() {
                       <div className="flex items-center gap-2">
                         <BadgeIcon className="h-6 w-6 text-[#0071E3]" />
                         <h3 className="text-xl font-bold">
-                          Easy Badge Creation
+                          Easy Badge & certificates Creation
                         </h3>
                       </div>
                       <p className="text-[#86868B]">
@@ -234,7 +242,7 @@ export function Hero() {
             </div>
           </div>
         </section>
-        <section className="w-full py-5">
+        <section className="flex w-full justify-center py-5">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -358,8 +366,7 @@ export function Hero() {
           </div>
         </div>
       </footer>
-      <footer
-        className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">
           &copy; 2024 BadgeMate. All rights reserved.
         </p>
