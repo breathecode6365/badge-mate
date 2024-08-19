@@ -154,9 +154,10 @@ export function Hero() {
               />
             </div>
           </div>
-          <div id="start"></div>
         </section>
-        <section className="flex w-full justify-center py-5 bg-[#F5F5F7]">
+        <section
+          id="start"
+          className="flex w-full justify-center py-5 bg-[#F5F5F7]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
